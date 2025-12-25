@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scientific Calculator - My Study Friend">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="math.css">
+    <link rel="icon" type="image/x-icon" href="../imgs/webLogo.png">
+    <title>My Study Friend | Calculator</title>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-brand">📚 Study Friend</a>
+        <div class="nav-items">
+            <a href="../index.html" class="nav-item">
+                <img src="../imgs/home.png" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="math.html" class="nav-item active">
+                <img src="../imgs/calculator.png" alt="Calculator">
+                <span>Calculator</span>
+            </a>
+            <a href="../todo/todo.html" class="nav-item">
+                <img src="../imgs/todo.png" alt="Todo">
+                <span>Todo</span>
+            </a>
+            <a href="../science/science.html" class="nav-item">
+                <img src="../imgs/science.png" alt="Science">
+                <span>Science</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title">Scientific Calculator</h1>
+            <p class="page-subtitle">Perform complex calculations with ease</p>
+        </header>
+
+        <div class="calculator-container">
+            <div class="calculator">
+                <div class="display-section">
+                    <div class="display" id="operDisplay"></div>
+                    <div class="display" id="equalDisplay">0</div>
+                </div>
+                
+                <div class="subBtn keys" id="subBtn">
+                    <button class="subBtn key" onclick="appendToDisplay('(')" id="bracket">(</button>
+                    <button class="subBtn key" onclick="appendToDisplay(')')" id="bracket">)</button>
+                    <button class="subBtn key" onclick="appendToDisplay('mc')" id="mc">mc</button>
+                    <button class="subBtn key" onclick="appendToDisplay('m+')" id="m+">m+</button>
+                    <button class="subBtn key" onclick="appendToDisplay('m-')" id="m-">m-</button>
+                    <button class="subBtn key" onclick="appendToDisplay('mr')" id="mr">mr</button>
+                    
+                    <button class="subBtn key" onclick="appendToDisplay('2ndOPER')" id="secondSubBTN">2<sup>nd</sup></button>
+                    <button class="subBtn key" onclick="appendToDisplay('^2')" id="power2">x<sup>2</sup></button>
+                    <button class="subBtn key" onclick="appendToDisplay('^3')" id="power3">x<sup>3</sup></button>
+                    <button class="subBtn key" onclick="appendToDisplay('^')" id="power">x<sup>y</sup></button>
+                    <button class="subBtn key" onclick="appendToDisplay('e^x')" id="e^x">e<sup>x</sup></button>
+                    <button class="subBtn key" onclick="appendToDisplay('10')" id="scintNotation">10<sup>x</sup></button>
+                    
+                    <button class="subBtn key" onclick="appendToDisplay('⅟')">⅟</button>
+                    <button class="subBtn key" onclick="appendToDisplay('√')">√</button>
+                    <button class="subBtn key" onclick="appendToDisplay('∛')">∛</button>
+                    <button class="subBtn key" onclick="appendToDisplay('y√x')"></button>
+                    <button class="subBtn key" onclick="appendToDisplay('In')">In</button>
+                    <button class="subBtn key" onclick="appendToDisplay('log10')" id="log">log</button>
+                    
+                    <button class="subBtn key" onclick="appendToDisplay('ln')" id="ln">ln</button>
+                    <button class="subBtn key" onclick="appendToDisplay('sin')" id="sin">sin</button>
+                    <button class="subBtn key" onclick="appendToDisplay('cos')" id="cos">cos</button>
+                    <button class="subBtn key" onclick="appendToDisplay('tan')" id="tan">tan</button>
+                    <button class="subBtn key" onclick="appendToDisplay('Rand')" id="rand">Rand</button>
+                    <button class="subBtn key" onclick="appendToDisplay('Rad')" id="rad">Rad</button>
+                </div>
+                
+                <div class="mainBtn" id="mainBtn">
+                    <button class="calcBtn" onclick="appendToDisplay('-')" id="powr">±</button>
+                    <button class="calcBtn accent" onclick="clearDisplay()" id="ac">AC</button>
+                    <button class="calcBtn" onclick="appendToDisplay('%')" id="percent">%</button>
+                    <button class="calcBtn" onclick="remove()" id="backspace">⌫</button>
+                    
+                    <button class="calcBtn number" onclick="appendToDisplay('7')">7</button>
+                    <button class="calcBtn number" onclick="appendToDisplay('8')">8</button>
+                    <button class="calcBtn number" onclick="appendToDisplay('9')">9</button>
+                    <button class="calcBtn operator" onclick="appendToDisplay('÷')">÷</button>
+                    
+                    <button class="calcBtn number" onclick="appendToDisplay('4')">4</button>
+                    <button class="calcBtn number" onclick="appendToDisplay('5')">5</button>
+                    <button class="calcBtn number" onclick="appendToDisplay('6')">6</button>
+                    <button class="calcBtn operator" onclick="appendToDisplay('×')">×</button>
+                    
+                    <button class="calcBtn number" onclick="appendToDisplay('1')">1</button>
+                    <button class="calcBtn number" onclick="appendToDisplay('2')">2</button>
+                    <button class="calcBtn number" onclick="appendToDisplay('3')">3</button>
+                    <button class="calcBtn operator" onclick="appendToDisplay('-')">−</button>
+                    
+                    <button class="calcBtn number" onclick="appendToDisplay('0')">0</button>
+                    <button class="calcBtn" onclick="appendToDisplay('.')">.</button>
+                    <button class="calcBtn equals" onclick="calculate()">=</button>
+                    <button class="calcBtn operator" onclick="appendToDisplay('+')">+</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="math.js"></script>
+</body>
+</html>

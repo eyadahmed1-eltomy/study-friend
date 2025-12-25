@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Us - My Study Friend">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="contact.css">
+    <title>My Study Friend | Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="imgs/webLogo.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("1ar9uwn6KneTdZGzZ");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+        <a href="index.html" class="nav-brand">📚 Study Friend</a>
+        <div class="nav-items">
+            <a href="index.html" class="nav-item">
+                <img src="imgs/home.png" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="math/math.html" class="nav-item">
+                <img src="imgs/calculator.png" alt="Calculator">
+                <span>Calculator</span>
+            </a>
+            <a href="todo/todo.html" class="nav-item">
+                <img src="imgs/todo.png" alt="Todo">
+                <span>Todo</span>
+            </a>
+            <a href="science/science.html" class="nav-item">
+                <img src="imgs/science.png" alt="Science">
+                <span>Science</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="contact-container">
+            <!-- Back Button -->
+            <a href="index.html" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span>Back to Home</span>
+            </a>
+
+            <div class="contact-header">
+                <h1 class="page-title">Get in Touch</h1>
+                <p class="page-subtitle">We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Info Cards -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>support@mystudyfriend.com</p>
+                            <p>info@mystudyfriend.com</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>Mon-Fri: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="bug">Bug Report</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>How do I use the calculator?</h4>
+                        <p>The calculator supports basic arithmetic, scientific functions, and memory operations. Click on the numbers and operators to perform calculations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can I save my todo lists?</h4>
+                        <p>Yes! Todo lists are automatically saved to your browser's local storage. They'll persist even after closing the browser.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Is the periodic table accurate?</h4>
+                        <p>Yes, our periodic table contains accurate atomic numbers, symbols, weights, and element names based on the latest scientific data.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How can I report a bug?</h4>
+                        <p>Use the form above and select "Bug Report" as the subject. Please include detailed steps to reproduce the issue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="contact.js"></script>
+</body>
+</html>

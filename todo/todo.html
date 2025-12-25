@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Manager - My Study Friend">
+    <title>My Study Friend | Todo List</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="../imgs/webLogo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-brand">📚 Study Friend</a>
+        <div class="nav-items">
+            <a href="../index.html" class="nav-item">
+                <img src="../imgs/home.png" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="../math/math.html" class="nav-item">
+                <img src="../imgs/calculator.png" alt="Calculator">
+                <span>Calculator</span>
+            </a>
+            <a href="todo.html" class="nav-item active">
+                <img src="../imgs/todo.png" alt="Todo">
+                <span>Todo</span>
+            </a>
+            <a href="../science/science.html" class="nav-item">
+                <img src="../imgs/science.png" alt="Science">
+                <span>Science</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <h1 class="page-title">Task Manager</h1>
+            <p class="page-subtitle">Stay organized and boost your productivity</p>
+            <div class="date-time">
+                <span id="current-date"></span>
+                <span id="current-time"></span>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="total-tasks">0</span>
+                    <span class="stat-label">Total Tasks</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="completed-tasks">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="pending-tasks">0</span>
+                    <span class="stat-label">Pending</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="add-task-section">
+            <form id="todo-form" class="add-task-form">
+                <div class="form-row">
+                    <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+                    <button type="submit" class="btn-add">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Task</span>
+                    </button>
+                </div>
+                <div class="form-row secondary">
+                    <select id="priority-select">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <input type="datetime-local" id="deadline-input" placeholder="Deadline">
+                    <input type="text" id="category-input" placeholder="Category (optional)">
+                </div>
+            </form>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filter-buttons">
+                <select id="filter-status">
+                    <option value="all">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+                <select id="filter-priority">
+                    <option value="all">All Priorities</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Todo List -->
+        <div class="todo-list-container">
+            <ul id="todo-list" class="todo-list"></ul>
+        </div>
+    </main>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <form id="edit-form">
+                <input type="text" id="edit-task-input" placeholder="Task name" required>
+                <input type="datetime-local" id="edit-deadline-input">
+                <div class="modal-buttons">
+                    <button type="button" id="cancel-edit" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
